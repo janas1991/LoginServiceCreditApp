@@ -19,10 +19,10 @@ public class UserClient {
     public UserClient() {
     }
 
-    URI saveURL = UriComponentsBuilder.fromHttpUrl("http://localhost:8009/user/").build().encode().toUri();
+    URI saveURL = UriComponentsBuilder.fromHttpUrl("https://gentle-everglades-62723.herokuapp.com/user/").build().encode().toUri();
 
     public List<UserDto> getUsers() {
-        URI getURL = UriComponentsBuilder.fromHttpUrl("http://localhost:8009/user/").build().encode().toUri();
+        URI getURL = UriComponentsBuilder.fromHttpUrl("https://gentle-everglades-62723.herokuapp.com/user/").build().encode().toUri();
         try {
             UserDto[] usersResponse = restTemplate.getForObject(getURL, UserDto[].class);
             return Arrays.asList(ofNullable(usersResponse).orElse(new UserDto[0]));
